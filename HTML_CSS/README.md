@@ -133,7 +133,7 @@ Address: 142.250.207.36     # 구글 IP
       <!-- table data -->
       <td>1</td>
       <td>해리포터</td>
-      <td>100</td>
+      <td>100</td>   
    </tr>
    <!-- table row3 -->
    <tr>
@@ -142,14 +142,113 @@ Address: 142.250.207.36     # 구글 IP
       <td>200</td>
    </tr>
    <tr>
-        <td>총 판매량</td>
-        <td></td>
-        <td>300</td>
-    </tr>
-    <tr>
       <!-- 2개의 column을 병합 -->
       <td colspan="2">총 판매량</td>
       <td>300</td>
-    </tr>
+   </tr>
 </table>
 ```
+
+<br>
+
+## ⚜️ CSS
+### 1️⃣ HTML 문서 내부 CSS
+* `<style>` 태그를 이용하여 `<head>` 안에 정의
+```html
+<head>
+    <style>
+        h1{color:red;}
+    </style>
+</head>
+```
+
+### 2️⃣ 외부 CSS
+* `<link rel="stylesheet" href="css 파일 경로">` 를 `<head>` 안에 정의
+```html
+<head>
+   <link rel="stylesheet" href="005.css">
+</head>
+
+<!-- 두 가지가 동시에 쓰면 아래에 있는 코드로 적용 -->
+<!-- 내부 style 스타일 적용 -->
+<head>
+   <link rel="stylesheet" href="005.css">
+   <style>
+        h1{color:red;}
+    </style>
+</head>
+
+<!-- 외부 css 파일 스타일 적용-->
+<head>
+   <style>
+        h1{color:red;}
+    </style>
+   <link rel="stylesheet" href="005.css">
+</head>
+```
+### 3️⃣ 태그 속성을 이용
+```html
+<h2 style="color: blue;">blue</h2>
+```
+
+### 4️⃣ id, class
+* 같은 태그지만 각기 다른 스타일을 적용하고 싶을 때 사용
+* `id`의 경우 같은 페이지에서 고유값이어야 함
+* `id`에 style을 지정할 때는 `#id{}` 로 정의
+```html
+<style>
+   #one{
+      color:red;
+   }
+</style>
+<h1 id="one">hello</h1>
+<h1 id="two">hello</h1>
+```
+* `class`는 스타일 중첩 가능
+* `class`에 style을 지정할 때는 `.class{}` 로 정의
+```html
+<style>
+   .one{
+      color:red;
+   }
+   .two{
+      font-size:20px;
+   }
+</style>
+<h1 class="one two">hello</h1>
+<h1 class="two">hello</h1>
+```
+
+### 5️⃣ (고정, 가변) 크기 단위
+* 고정 크기 단위
+  * 기준점에 상관없이 고정되는 단위
+  * px, pt, in, cm, mm
+* 가변 크기 단위
+  * 기준점에 따라 크기가 바뀌는 단위
+  * em, %, rem, vw
+  * 5em = 500%
+
+### 6️⃣ margin, padding
+* margin
+  * border를 기준으로 바깥에 있는 여백
+* padding
+  * border를 기준으로 내부에 있는 여백
+```html
+<style>
+   h2{
+      border: 1px solid black;
+      <!-- 상 우 하 좌 (시계 방향) -->
+      padding: 20px 2px 10px 30px;
+      margin: 60px;
+   }
+</style>
+```
+
+
+### 7️⃣ 색상
+* `opacity`
+  * 색상 불투명도 조정
+  * .class{opacity:0.5;}
+* `color`
+  * #blue, #red
+  * #000000 ~ #ffffff : 6자리 중 앞에서 두자리씩 R, G, B 값
