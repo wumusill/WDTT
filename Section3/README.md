@@ -1,12 +1,17 @@
 # ✅ HTML, CSS
-## 웹의 동작 방식
-1️⃣ 브라우저에 도메인 입력 `ex) www.google.com`
+## 🕸️ 웹의 동작 방식
+1️⃣ 브라우저에 도메인 입력 `ex) www.google.com` <br>
 2️⃣ 브라우저가 DNS 에서 도메인과 매칭되는 IP 를 가져옴
-   > DNS 란?
-   * 
-3️⃣ `Request` : 브라우저가 인터넷을 통해 IP 를 이용해 구글 서버에 접속
-4️⃣ `Response` : 구글 서버에서 html 코드를 받아옴
+> DNS 란?
+   * Domain Name System
+   * 호스트의 도메인 이름을 네트워크 주소로 바꾸거나 그 반대의 변환을 수행할 수 있도록 개발
+   * 도메인을 IP 주소로 변환하고 라우팅 정보를 제공하는 분산형 데이터베이스 시스템
+
+3️⃣ `Request` : 브라우저가 인터넷을 통해 IP 를 이용해 구글 서버에 접속 <br>
+4️⃣ `Response` : 구글 서버에서 html 코드를 받아옴 <br>
 5️⃣ 브라우저가 받아온 파일을 해석
+
+<br>
 
 ## terminal 에서 구글 IP 조회
 ```
@@ -15,4 +20,136 @@
 Non-authoritative answer:
 Name:	www.google.com      # 구글 도메인
 Address: 142.250.207.36     # 구글 IP
+```
+
+<br>
+
+## 🏷️ 글자 태그
+### `<br>` 
+* html은 텍스트를 enter 로 분리해도 연속된 여백(공간)을 다 병합 
+* enter를 친 것 같이 텍스트를 분리하고 싶다면 `<br>` 태그 활용
+### `<hr>`
+* `<br>` + 실선 추가
+### `<a>` 
+* 클릭하면 지정된 링크로 이동, 같은 경로에 있는 파일의 이름을 지정하면 해당 파일 다운로드
+### `<strong>`, `<b>`
+* 텍스트 bold 처리, 강조 효과
+> * html5 에서는 `<strong>` 권장 
+> * 시각 장애인들을 위한 음성 지원 시 `<strong>`이 음성 강조 의미를 가지기 때문
+> * `<b>` 는 html5 이전에 사용되던 태그
+
+### `<em>`, `<i>`
+* 텍스트 italic 처리
+> * `<em>` 태그 권장
+> * `<i>` 는 html5 이전에 사용되던 태그
+
+
+### `<mark>`
+* 하이라이트, 형광펜 같은 효과
+### `<sub>`
+* 아래첨자
+### `<sup>`
+* 위첨자
+
+<br>
+
+## 🏷️ 콘텐츠 그룹 태그
+### `<ol>`
+* order list
+* 순서가 있는 내용을 출력할 때 사용 
+* `<ol type="i" or "I">` : 로마자
+* `<ol type="a" or "A">` : 알파벳
+
+
+### `<ul>`
+* unorder list
+* 순서가 없는 내용을 출력할 때 사용
+* 웹 상단에 메뉴를 표현할 때 자주 사용
+
+
+### `<dl>`, `<dt>`, `<dd>`
+* `<dl>` : definition list
+* `<dt>` : definition term, 정의할 용어
+* `<dd>` : definition description, 용어를 설명하는 태그, 들여쓰기 처리 됨
+> * 태그를 용도에 맞게 사용하지 않으면 검색 엔진이 신뢰하지 않음
+
+
+### `<div>`
+* 여러 태그, 내용들을 묶어주는 태그
+
+
+<br>
+
+## 🏷️ 미디어 태그
+### img
+* `<img src="이미지 링크" alt="이미지가 출력되지 않을 때 출력할 대체 문구">`
+
+### audio
+* `<audio src="">`
+
+### video
+* `<video src="">`
+
+> * 최근 audio, video 태그를 사용하기 보다는 동영상의 소스코드를 불러와서 사용
+> * 서버에다가 저장해두고 사용하면 네트워크 부하 & 용량 차지
+
+<br>
+
+## 🏷️ form
+### input
+* `<input type="text">`
+* `<input type="password">`
+  * 복사 불가능
+* `<input type="date">`
+* `<input type="time">`
+* `<input type="range">`
+* `<input type="color">`
+* `<input type="radio">`
+  * 중복 불가능한 선택에서 사용
+  * ex) 당신의 성별은?
+* `<input type="checkbox">`
+  * 중복 가능한 선택에서 사용
+  * ex) 선호하는 언어는?
+* `<input type="file">`
+
+### textarea
+* 장문의 여러 줄의 데이터를 입력 받을 떄 사용
+
+<br>
+
+## 🏷️ table
+```html
+<table width="100%" height="200px">
+   <!-- table row1 -->
+   <tr> 
+      <!-- table head -->
+      <!-- 데이터 가운데 정렬 + bold -->
+      <th>구분</th>
+      <th>이름</th>
+      <th>판매량</th>
+   </tr>
+   <!-- table row2 -->
+   <tr>
+      <!-- table data -->
+      <td>1</td>
+      <td>해리포터</td>
+      <td>100</td>
+   </tr>
+   <!-- table row3 -->
+   <tr>
+      <td>2</td>
+      <td>아바타</td>
+      <td>200</td>
+   </tr>
+   <tr>
+        <td>총 판매량</td>
+        <td></td>
+        <td>300</td>
+    </tr>
+    <tr>
+      <!-- 2개의 column을 병합 -->
+      <td colspan="2">총 판매량</td>
+      <td>300</td>
+    </tr>
+</table>
 ```
