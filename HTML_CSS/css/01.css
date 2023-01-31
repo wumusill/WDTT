@@ -1,0 +1,27 @@
+.page-header{
+    padding: 1em;
+    background: lightgray;
+}
+
+.content-section{
+    padding: 1em;
+}
+
+.content-section-a{
+    background: yellow;
+}
+
+.content-section-b{
+    background: pink;
+}
+
+.page-footer{
+    padding: 1em;
+    background: yellowgreen;
+}
+
+.global-menu-link{
+    display: block;
+    background: white;
+    margin-bottom: 5px;
+}
