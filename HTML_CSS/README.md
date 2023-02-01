@@ -300,7 +300,7 @@ Address: 142.250.207.36     # 구글 IP
 
 <br>
 
-## 🐰 display : inline vs block
+## 🐰 display : inline vs block, inline-block
 ### inline
 * 입력된 텍스트만큼의 영역 차지
 * `class{display: inline;}`
@@ -311,3 +311,147 @@ Address: 142.250.207.36     # 구글 IP
 * `class{display: block;}`
 * div 태그의 경우 기본값
 * 상단의 주요 아웃라인 엘리먼트 기본값
+### inline-block
+* inline 처럼 수평으로 배치
+* block 처럼 width, height 설정 가능
+  * inline 은 width, height 조정 불가능
+* rem
+  * root em
+  * html 의 최상위 엘리먼트의 폰트 사이즈
+  * 특별하게 설정 되어있지 않다면 모든 브라우저는 16px 로 정해져 있음
+```css
+.class{
+   /* 사이즈가 다른 두 인라인 요소를 위로 맞추는 방법 */
+    vertical-align: top;
+
+    /* css3 부터 지원하는 기능 */
+    width: calc(30% - 2em);
+```
+
+<br>
+
+## 🐰 float
+[참고 자료](https://ofcourse.kr/css-course/float-%EC%86%8D%EC%84%B1)
+* left
+  * 왼쪽에 떠다니는 블록 박스 생성
+  * 페이지 내용은 박스 오른쪾에 위치하여 위에서 아래로 흐름
+* right
+  * 오른쪽에 부유하는 블록 박스를 생성
+  * 페이지 내용은 왼쪽에 위치하며 위에서 아래로 흐름
+```css
+.class{
+   float: left;
+}
+```
+
+
+* html 태그 맨 마지막에 위치하는 가상 엘리먼트 만드는 방법
+```css
+.class:after{
+    content: '';
+    clear: left;
+    display: block;
+    height: 0;
+    visibility: hidden;
+}
+```
+
+<br>
+
+## 🐰 flexbox
+[참고 자료](https://developer.mozilla.org/ko/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox)
+* 인터페이스 내의 아이템 공간 배분과 강력한 정렬 기능을 제공하기 위한 1차원 레이아웃 모델
+* block 요소들을 inline 처럼 옆으로 보여주고 싶을 때 사용
+* internet explorer 10 부터 지원
+* 10의 경우 속성의 이름이 다름
+* 10을 지원해야하는 프로그램이라면 따로 확인해야 함
+```css
+.class{
+   /* 브라우저 높이의 50% 차지 */
+   height: 80vh;
+   background: gray;
+
+   display: flex;
+   /* 축의 방향 결정 */
+   flex-direction: row;
+
+   /* 메인 축에 내용물 정렬 방식 */
+   /* flex-start, flex-end, center, space-between, space-around */
+   justify-content: space-between;
+
+   /* 메인 축의 수직 방향으로 내용물 정렬 방식 */
+   /* stretch, flex-start, flex-end, center */
+   align-items: stretch;
+
+   /* 내용을 제외한 여백의 비율 */
+   flex-grow: 1;
+   /* 내용물을 포함한 비율 */
+   flex-basis: 0;
+
+   /* flex 값을 설정하면 flex-basis: 0 자동 설정 */
+   flex: 1;
+}
+```
+
+<br>
+
+## 🐰 checkbox
+
+```html
+<label for="input-check">체크하세요</label>
+<input type="checkbox" class="input-check" id="input-check">
+
+<label for="input-check">
+   체크하세요
+   <input type="checkbox" class="input-check" id="input-check">
+</label>
+```
+* label 의 for 속성과 input 의 id 속성이 같으면 label을 클릭해도 체크 가능
+
+<br>
+
+```css
+/* class1 뒤에 나오는 class2 중 같은 항렬에만 해당하는 css */
+.class1 ~ .class2 {
+   background: #fff000;
+}
+
+/* class1 바로 뒤에 나오는 class2 이면서 같은 항렬에만 해당하는 css */
+.class1 + .class2 {
+   background: #fff000;
+}
+
+
+/* 체크박스에 체크가 됐을 경우 작동하는 css */
+.class1:checked ~ .class2 {
+   background: #fff000;
+}
+```
+
+<br>
+
+## 🐰 position
+[참고 자료](https://developer.mozilla.org/ko/docs/Web/CSS/position)
+```css
+p {
+   /* 기본값 static */
+   position: sticky;
+   top: 20px;
+
+   /* 숫자가 높을수록 위로 z축 상단에 위치 */
+   z-index: 10;
+}
+```
+* 문서 상에 요소를 배치하는 방법을 지정할 때 사용
+* `absolute` : 절대 위치
+* `relative` : 상대 위치
+* `fixed` : 스크롤 상관 없이 위치 고정
+* `sticky` : 스크롤로 지정된 위치에 가게되면 고정
+* `absolute`, `relative`, `fixed`, `sticky` 등의 position은 `static` 보다 z축 상단에 위치
+* position이 `static`이 아니면 늦게 나온 엘리먼트가 상단에 위치
+* 순서를 지정해주고 싶다면 `z-index` 활용
+  * 숫자가 높을수록 z축 상단 위치
+* 부모 요소가 static(기본값)이라면
+  * 자식 요소에 설정된 position에 따라 움직임
+* 부모 요소가 static이 아니라면
+  * 자식 요소에 position을 설정했더라도 부모 영역을 따라가고 부모 영역 안에서 position 결정

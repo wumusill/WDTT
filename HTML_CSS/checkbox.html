@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    .box {
+        width: 200px;
+        height: 100px;
+        border: 3px solid black;
+        margin: 10px;
+    }
+    .input-check:checked ~ .box {
+        background: #fff000;
+    }
+    </style>
+</head>
+<body>
+    <label for="input-check">체크하세요</label>
+    <input type="checkbox" class="input-check" id="input-check">
+    <div class="box">BOX</div>
+    <div class="container">
+        <div class="box">BOX</div>
+    </div>
+    <div class="box">BOX</div>
+</body>
+</html>
