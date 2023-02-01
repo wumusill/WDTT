@@ -331,7 +331,7 @@ Address: 142.250.207.36     # 구글 IP
 <br>
 
 ## 🐰 float
-[참고 자료](https://ofcourse.kr/css-course/float-%EC%86%8D%EC%84%B1)
+[참고 자료](https://developer.mozilla.org/ko/docs/Web/CSS/float)
 * left
   * 왼쪽에 떠다니는 블록 박스 생성
   * 페이지 내용은 박스 오른쪾에 위치하여 위에서 아래로 흐름
