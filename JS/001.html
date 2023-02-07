@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="one">hello</h1>
+    <script>
+        // 변수 선언
+        var name = '구자현';
+        var age = 20;
+
+        // 웹에 출력하는 코드
+        document.write(name);
+        document.write('<br>');
+        document.write(age);
+
+        // 상단 h1 태그의 id를 잡아 element 변경
+        document.getElementById('one').innerHTML = "heelo javascript"
+
+        // 웹에 경고창 형태로 출력
+        window.alert(name);
+
+        // 개발자 도구 console에 찍어보는 코드
+        console.log(name);
+    </script>
+</body>
+</html>

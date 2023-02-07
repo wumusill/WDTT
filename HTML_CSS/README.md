@@ -175,14 +175,14 @@ Address: 142.250.207.36     # 구글 IP
    <link rel="stylesheet" href="005.css">
    <style>
         h1{color:red;}
-    </style>
+   </style>
 </head>
 
 <!-- 외부 css 파일 스타일 적용-->
 <head>
    <style>
         h1{color:red;}
-    </style>
+   </style>
    <link rel="stylesheet" href="005.css">
 </head>
 ```
@@ -283,7 +283,7 @@ Address: 142.250.207.36     # 구글 IP
 * 일반적으로 메인 네비게이션 역할의 링크 묶음에 사용
 ### 6️⃣ `<aside>`
 * 페이지의 주요 내용의 흐름과 관련없는 다른 내용
-* 사이드바 형탵의 디자인으로 자주 표현
+* 사이드바 형태의 디자인으로 자주 표현
 * 각주에는 aside를 사용하지 않음
 ### 7️⃣ `<h1> ... <h6>`
 * Sectioning content의 제목
@@ -326,6 +326,7 @@ Address: 142.250.207.36     # 구글 IP
 
     /* css3 부터 지원하는 기능 */
     width: calc(30% - 2em);
+}
 ```
 
 <br>

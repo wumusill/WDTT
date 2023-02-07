@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function circle(r){
+            return r * r * 3.14
+        }
+        document.write(circle(4), '<br>')
+
+        let sumArrorFunction = (x, y) => x + y;
+        document.write(sumArrorFunction(10, 20), '<br>')
+
+        // 함수 선언문
+        function sum(x, y){
+            return x + y;
+        }
+
+        // 함수 표현식
+        let sumXY = function(x, y){
+            return x + y;
+        };
+
+        let sumXYcopy = sumXY;
+
+        // 콜백 함수
+        function sum(x, y, z){
+            z(x + y);
+            return x + y;
+        }
+
+        function documentWrite(s){
+            document.write('콜백 함수', s);
+        }
+
+        sum(100, 20, documentWrite)
+
+    </script>
+</body>
+</html>
