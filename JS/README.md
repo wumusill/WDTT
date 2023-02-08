@@ -241,3 +241,229 @@ function documentWrite(s){
 
 sum(100, 20, documentWrite)
 ```
+
+<br>
+
+## 🐯 제어문
+### if
+```js
+let score = 89;
+let money = 1000;
+
+if(score > 90){
+    document.write('참 잘했습니다! <br>');
+    money += 100000
+} else if (score > 80){
+    document.write('잘했습니다! <br>');
+    money += 10000
+} else if (score > 70){
+    document.write('했습니다! <br>');
+    money += 1000
+} else{
+    money = 0
+}
+```
+
+<br>
+
+### 삼항연산자
+* python comprehension과 유사
+* 한 줄로 작성하나 코드가 길어지면 `?`, `:` 뒤에서 줄 바꿈이 일반적
+```js
+let x = 3;
+
+x == 2? 
+document.write('if문으로 실행되었습니다.') :
+document.write('else문으로 실행되었습니다.')
+
+// 변수 선언
+let result = x == 3 ? true : false;
+
+document.write(result)
+
+// 위 if문 구현
+let score = 69;
+let money = 1000;
+
+score > 90 ? money += 100000 :
+score > 80 ? money += 10000 :
+score > 70 ? money += 1000 : money = 0
+```
+
+<br>
+
+### Switch
+* 변수와 case의 자료형이 반드시 같아야 함
+* if문을 switch문으로 변환할 수 있고 switch문도 if문으로 변환 가능
+* 목적, 용도에 맞게 사용
+```js
+let num = 1;
+
+switch (num) {
+    case 0:
+        document.write('0번째 case입니다.')
+        break;
+    case 1:
+        document.write('1번째 case입니다.')
+        break;
+    case 2:
+        document.write('2번째 case입니다.')
+        break;    
+    default:
+        break;
+}
+
+// 여러 case를 하나로 처리하는 것도 가능
+let num = 1;
+
+switch (num) {
+    case 0:
+
+    case 1:
+        document.write('1번째 case입니다.')
+        break;
+    case 2:
+        document.write('2번째 case입니다.')
+        break;    
+    default:
+        break;
+}
+
+// 이런 것도 가능
+switch (new Date().getDay()) {
+    case 0:
+        document.write('일요일입니다.')
+        break;
+    case 1:
+        document.write('월요일입니다.')
+        break;
+    case 2:
+        document.write('화요일입니다.')
+        break;
+    case 3:
+        document.write('수요일입니다.')
+        break;
+    case 4:
+        document.write('목요일입니다.')
+        break;
+    case 5:
+        document.write('금요일입니다.')
+        break;
+    case 6:
+        document.write('토요일입니다.')
+        break;
+    default:
+        break;
+}
+```
+
+
+<br>
+
+### for
+```js
+// 0~9까지 출력하는 구문
+for (var i = 0; i < 10; i++) {
+    document.write(i, '<br>')
+}
+
+// 0~100의 합을 출력하는 구문
+let s = 0;
+for (var i = 0; i < 101; i++) {
+    s += i
+}
+document.write(s, '<br>')
+
+// 0~100 중 짝수만 합을 출력하는 구문
+let s = 0;
+for (var i = 0; i < 101; i+=2) {
+    s += i
+}
+document.write(s, '<br>')
+
+// 구구단, 이중 for문
+for (var i = 2; i < 10; i++) {
+    for (var j = 1; j < 10; j++) {
+        document.write(`${i} X ${j} = ${i*j} <br>`)
+    }
+}
+
+// 100 이하의 자연수 중 3의 배수와 5의 배수의 합
+let s = 0
+for (var i = 1; i < 101; i++) {
+    if (i % 3 == 0) {
+        s += i
+    } else if (i % 5 == 0) {
+        s += i
+    }
+}
+
+let s = 0
+for (var i = 1; i < 101; i++) {
+    if (i % 3 == 0 || i % 5 == 0) {
+        s += i
+    }
+}
+```
+
+<br>
+
+### forEach, for_in, for_of
+```js
+let array = [10, 20, 30, 40, 50];
+
+array.forEach(e => console.log(e));
+
+// for in, array의 index를 순회
+for (var variable in array) {
+    document.write(array[variable], '<br>');
+}
+
+// for of, array의 value를 순회
+for (var variable of array) {
+    document.write(variable, '<br>');
+}
+```
+
+<br>
+
+### while
+```js
+let num = 0;
+
+// 조건에 맞을 때만 실행
+while (num < 11) {
+    document.write(num, '<br>')
+    num += 1;
+}
+
+// 조건에 맞지 않더라도 최소한 한번은 실행
+do {
+    document.write(num, '!! <br>')
+    num += 1;
+} while (num < 11);
+```
+<br>
+
+### break, continue
+```js
+let num = 0;
+
+while (num < 11) {
+    num++;
+    if (num > 5){
+        continue;
+    }
+    document.write(num, '<br>') 
+}
+
+let num = 0;
+
+while (num < 11) {
+    num++;
+    if (num > 5){
+        break;
+    }
+    document.write(num, '<br>') 
+}
+```

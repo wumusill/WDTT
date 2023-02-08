@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // let num = 0;
+
+        // while (num < 11) {
+        //     num++;
+        //     if (num > 5){
+        //         continue;
+        //     }
+        //     document.write(num, '<br>') 
+        // }
+
+        // // 조건에 맞지 않더라도 최소한 한번은 실행
+        // do {
+        //     document.write(num, '!! <br>')
+        //     num += 1;
+        // } while (num < 11);
+
+        let s = '5,4,10,2,5';
+        let splitS = s.split(',');
+        let sum1 = 0;
+        let sum2 = 0;
+        for (var value of splitS) {
+            sum1 += Number(value)
+            sum2 += parseInt(value, 10)
+        }
+
+        document.write(sum1/splitS.length)
+
+
+        
+
+    </script>
+</body>
+</html>
