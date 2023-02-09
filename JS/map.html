@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let m = new Map();
+
+        // map에 자료를 넣는 코드
+        // set(key, val)
+        m.set('하나', '1');
+        m.set(1, '하나');
+        m.set(true, 1);
+        m.set(false, 0);
+
+        // key에 대응하는 value 출력하는 코드
+        console.log(m.get('하나'));
+        console.log(m.get(1));
+
+        // key를 가지고 있는지 확인
+        console.log(m.has(true));
+
+        // 요소를 삭제하는 코드
+        console.log(m.delete('하나'));
+        console.log(m.has('하나'));
+
+        // m과 m의 size를 출력하는 코드
+        console.log(m)
+        console.log(m.size)
+
+        for (var variable of m) {
+            console.log(`m을 순회하고 있습니다. ${variable}`)
+            // 인덱싱도 가능
+            console.log(`m을 순회하고 있습니다. ${variable[0]}`)
+        }
+
+        m.keys()
+        m.values()
+        m.entries()
+
+        let s = new Set('abcde')
+        console.log(s)
+        
+        // Set의 길이 출력
+        console.log(s.size)
+
+        // Set에 요소 추가
+        s.add('f')
+        console.log(s)
+
+        for (var variable of s) {
+            console.log(`s를 순회하고 있습니다 ${variable}`)
+        }
+
+        //this
+        let 호텔 = [{
+            '이름': '하나호텔',
+            '위치': '제주도 제주시 00',
+            '가격': {'A':50000, 'B':30000, 'C':15000},
+            '방의개수': 50,
+            '예약자수' : 25,
+            '남은방의개수' : function(){return this.방의개수 - this.예약자수}
+        }, {
+            '이름': '둘호텔',
+            '위치': '제주도 제주시 01',
+            '가격': {'A':10000, 'B':60000, 'C':30000},
+            '방의개수': 100,
+            '예약자수' : 30,
+            '남은방의개수' : function(){return this.방의개수 - this.예약자수}
+        }, {
+            '이름': '셋호텔',
+            '위치': '제주도 제주시 02',
+            '가격': {'A':80000, 'B':50000, 'C':30000},
+            '방의개수': 120,
+            '예약자수' : 80,
+            '남은방의개수' : function(){return this.방의개수 - this.예약자수}
+        }]
+
+        console.log(호텔[0]['남은방의개수']())
+        console.log(호텔[1]['남은방의개수']())
+        console.log(호텔[2]['남은방의개수']())
+    </script>
+</body>
+</html>
