@@ -1,3 +1,5 @@
+/data
+NLP/Word_Embedding/eng_w2v
 ### Django ###
 *.log
 *.pot
