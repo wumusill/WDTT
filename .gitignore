@@ -20,11 +20,9 @@ pip-selfcheck.json
 /data
 NLP/Word_Embedding/eng_w2v
 modeling.ipynb
-testmodel1
 checkpoint
-testmodel*
 ChatBotData.csv
-
+test*
 
 ### Django ###
 *.log
