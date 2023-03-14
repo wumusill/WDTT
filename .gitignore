@@ -23,6 +23,7 @@ modeling.ipynb
 checkpoint
 ChatBotData.csv
 test*
+NF/saved
 
 ### Django ###
 *.log
