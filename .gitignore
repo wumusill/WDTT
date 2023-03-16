@@ -18,6 +18,7 @@ pip-selfcheck.json
 # End of https://www.toptal.com/developers/gitignore/api/venv
 
 /data
+hub_data.csv
 NLP/Word_Embedding/eng_w2v
 modeling.ipynb
 checkpoint

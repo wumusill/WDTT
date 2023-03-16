@@ -1,3 +1,4 @@
+<!-- base.html 상속 -->
 {% extends 'base.html' %}
 <!DOCTYPE html>
 <html lang="en">
@@ -10,17 +11,25 @@
 <body>
     {% block content %}
         <div>채팅 페이지</div>
+        <!-- 채팅을 입력받을 폼, post 요청 -->
         <form action="{{url_for('chat')}}" method="POST">
-            <p><input type="text" name="send" placeholder="메세지를 입력해주세요."></p>
+            <!-- 채팅 입력 창 -->
+            <p><input type="text" name="send" placeholder="메세지를 입력해주세요." required="required"></p>
+            <!-- 전송 버튼 -->
             <p><input type="submit" value="전송"></p>
         </form>
         
         <br>
         <br>
-        <!-- <div>{{ sends }}</div> -->
-        {% for send in sends %}
+
+        <!-- app.py/def chat 으로부터 전달 받은 msgs 순회 -->
+        {% for send, pred in msgs %}
+            <!-- 순회한 내용 출력 -->
             <div>{{ send }}</div>
+            <div>{{ pred }}</div>
+            <br>
         {% endfor %}
+
     {% endblock %}
 </body>
 </html>
