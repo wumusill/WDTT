@@ -9,18 +9,6 @@ app = Flask(__name__)
 # 모델 가중치가 저장 경로 
 PATH = '/Users/jahyeon_gu/WDTT/NF/saved'
 
-# 모델 선언
-model = transformer(
-    vocab_size=VOCAB_SIZE,
-    num_layers=NUM_LAYERS,
-    dff=DFF,
-    d_model=D_MODEL,
-    num_heads=NUM_HEADS,
-    dropout=DROPOUT)
-
-# 저장된 가중치 모델에 입히기
-model.load_weights(f'{PATH}/test_model')
-
 # 메세지를 저장할 리스트
 msgs = deque([], maxlen=5)
 
@@ -48,3 +36,4 @@ def chat():
 
 if __name__ == '__main__':
     app.run()
+
